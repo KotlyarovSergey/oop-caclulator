@@ -1,6 +1,6 @@
-package moderl.impl;
+package model.impl;
 
-import moderl.Calculable;
+import model.Calculable;
 
 public class Calculator implements Calculable {
     @Override

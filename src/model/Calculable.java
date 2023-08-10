@@ -1,4 +1,4 @@
-package moderl;
+package model;
 
 public interface Calculable {
     double plus(double val1, double val2);

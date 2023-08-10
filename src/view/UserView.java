@@ -19,4 +19,15 @@ public class UserView {
         System.out.println(builder);
     }
 
+    public void showContent(double val1, String operation){
+        StringBuilder builder = new StringBuilder(DiscardZero.convert(val1));
+        builder.insert(0, "\t[");
+        if(operation != null){
+            builder.append(" ")
+                    .append(operation)
+                    .append(" ");
+        }
+        builder.append("]");
+        System.out.println(builder);
+    }
 }

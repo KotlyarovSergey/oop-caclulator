@@ -1,6 +1,7 @@
 package controller;
 
 import model.Calculable;
+import util.InputParser;
 import util.Operations;
 import view.UserView;
 
@@ -59,7 +60,8 @@ public class UserController {
         return 0;
     }
     private void parseInput(String input) {
-        Double number = parseNumber(input);
+        InputParser parser = new InputParser();
+        Double number = parser.parseNumber(input);
         // если введено число
         if(number != null){
             // если первое число не заполнено
@@ -73,8 +75,8 @@ public class UserController {
                 this.firstValue = number;
             }
         } else {
-            // если не число, то должна быть операция
-            Operations operation = parseOperation(input);
+            // если не число, то может быть операция
+            Operations operation = parser.parseOperation(input);
             if(operation != Operations.none){
                 this.operation = operation;
             }
@@ -86,28 +88,7 @@ public class UserController {
         return scanner.nextLine();
     }
 
-    private Double parseNumber(String input){
-        try {
-            return Double.parseDouble(input);
-        }catch (Exception e){
-            return null;
-        }
-    }
 
-    private Operations parseOperation(String input){
-        switch (input){
-            case "+":
-                return Operations.plus;
-            case "-":
-                return Operations.minus;
-            case "*":
-                return Operations.mult;
-            case "/":
-                return Operations.div;
-            default:
-                return Operations.none;
-        }
-    }
 
 
 }

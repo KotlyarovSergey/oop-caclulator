@@ -1,7 +1,7 @@
 import controller.UserController;
 import controller.UserControllerWithLogger;
 import model.Calculable;
-import model.impl.CalcWithLog;
+import model.impl.CalculatorWithLogger;
 import logger.CalcLogger;
 import model.impl.Calculator;
 import view.UserView;
@@ -18,7 +18,7 @@ public class Main {
         CalcLogger calcLogger = new CalcLogger(UserControllerWithLogger.class);
         Logger logger = calcLogger.setLogger();
 
-        Calculable calculator = new CalcWithLog(logger);
+        Calculable calculator = new CalculatorWithLogger(new Calculator(), logger);
         UserView view = new UserView();
 
         UserControllerWithLogger controller = new UserControllerWithLogger(view, calculator, logger);

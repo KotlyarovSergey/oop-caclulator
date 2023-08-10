@@ -7,8 +7,6 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class CalcLogger {
-    //private Logger logger = Logger.getLogger(Calculator.class.getName());
-    //private Logger logger = Logger.getAnonymousLogger();
     private final Logger logger;
     final String logFileFullName = "\\src\\logger\\calc.log";
 
